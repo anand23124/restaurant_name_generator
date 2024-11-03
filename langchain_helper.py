@@ -1,13 +1,16 @@
-from secret_key import api_key
-from langchain_google_genai import ChatGoogleGenerativeAI
+from secret_key import GROQ_API_KEY
+from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
 
 
 
-llm = ChatGoogleGenerativeAI(api_key=api_key,model="gemini-pro",temperature=0.8)
-#Sequential chain template
+llm = ChatGroq(
+    temperature = 0,
+    groq_api_key=GROQ_API_KEY,
+    model_name="gemma-7b-it"
+)#Sequential chain template
 
 
 
